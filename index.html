@@ -14,6 +14,38 @@
 	<script src="js/script.js" defer></script>
 </head>
 <body>
-    
+    <!-- <div class="slider">
+		<div class="slider-viewer">
+		</div>
+		<div class="thumbs">
+			<div class="controls">
+				<div class="button-up ">&and;</div>
+				<div class="button-down">&or;</div>
+			</div>
+		</div>
+		<div class="btns">
+			<button class="btn-start-stop" data-functionality="stop">Stop</button>
+			<button class="btn-invert">Invert</button>
+		</div>
+	</div> -->
+    for (let i = 0; i < arrImages.length; i++) {
+        const eleImg = document.createElement('img');
+        eleImg.src = `img/${arrImages[i].image}`;
+        eleImg.classList.add('slider-img');
+        eleImg.alt = arrImages[i].title;
+        const eleText = document.createElement('div');
+        eleText.classList.add('text');
+        eleText.innerHTML = `
+          <h2>${arrImages[i].title}</h2>
+          <p>${arrImages[i].text}</p>
+        `;
+    <div class="container">
+        <div id="root">
+           <div v-for="obj in arrImages" key="obj.name" class="slider">
+            <img :src="'img/' + obj.image">
+
+           </div>
+        </div>
+    </div>
 </body>
 </html>
