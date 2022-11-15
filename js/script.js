@@ -71,17 +71,7 @@
 //  const eleSliderThumbs = document.querySelector('.thumbs');
  
  
-//  for (let i = 0; i < arrImages.length; i++) {
-// 	 const eleImg = document.createElement('img');
-// 	 eleImg.src = `img/${arrImages[i].image}`;
-// 	 eleImg.classList.add('slider-img');
-// 	 eleImg.alt = arrImages[i].title;
-// 	 const eleText = document.createElement('div');
-// 	 eleText.classList.add('text');
-// 	 eleText.innerHTML = `
-// 	   <h2>${arrImages[i].title}</h2>
-// 	   <p>${arrImages[i].text}</p>
-// 	 `;
+
 	 
 // 	 if (i === 0) {
 // 		 eleImg.classList.add('active');
@@ -152,8 +142,8 @@
 // - il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'esercizio si riduce a poche righe ;)
 // Buon lavoro e buon divertimento!
 
-const app = new Vue({
- el:'#root',
+new Vue({
+ el:'.slider',
  data:{
     arrImages:[
     {

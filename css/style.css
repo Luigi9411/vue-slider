@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	background-color: black;
+}
+
+.slider {
+	position: relative;
+	margin: auto;
+	height: 100%;
+	width: 60%;
+	max-width: 600px;
+	max-height: 400px;
+	
+}
+
+.slider .slider-viewer {
+	position: relative;
+	height: 100%;
+}
+
+.slider .controls {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	z-index: 10;
+}
+
+.button-up {
+	position: absolute;
+	top: 0;
+	left: 3.4em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: .5rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 70%;
+	background-color: white;
+}
+
+.button-down {
+	position: absolute;
+	bottom: -19.4em;
+	left: 3.4em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: .5rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 70%;
+	background-color: white;
+}
+
+.button-up:hover, .button-down:hover {
+	background-color: lightblue;
+	cursor: pointer;
+}
+
+.slider .slider-img {
+	
+	display: none;
+	width: 75%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 100% 70%;
+}
+
+.slider .slider-img.active {
+	display: block;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.slider .thumbs {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	height: 23.1%;
+	width: 25%;
+}
+
+.slider .thumb-img {
+	flex: 1 0 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	filter: brightness(.4);
+}
+
+.slider .thumb-img.active {
+	
+	filter: brightness(1);
+}
+
+.text{
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	display: none;
+	width: 75%;
+	color: white;
+}
+
+.text.active {
+	display: block;
+}
+
+.btns{
+	text-align: center;
+	padding: 3em ;
+}
+
+.btn-invert{
+	margin-left: 4em;
+	padding: 1.5em 2.5em;
+	border-radius: 20px;
+	text-transform: uppercase;
+	border: .2em solid brown;
+	background-color: rgb(188, 162, 106);
+}
+
+.btn-start-stop{
+	padding: 1.5em 2.5em;
+	border-radius: 20px;
+	text-transform: uppercase;
+	border: .2em solid brown;
+	background-color: rgb(188, 162, 106);
+}
