@@ -7,8 +7,6 @@
     <title>Vue Slider</title>
     <!-- style-css -->
 	<link rel="stylesheet" href="css/style.css">
-    <!-- script-js -->
-	<script src="js/script.js" defer></script>
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
 	<script src="js/script.js" defer></script>
@@ -16,33 +14,23 @@
 <body>
      <div class="slider">
          <div class="slider-viewer">
-            
-            <div v-for="obj in arrImages" :key="obj.name" class="slider-img">
-            <img :src="'img/'+ obj.image">
+            <img v-for="(obj,i) in arrImages" :src="'img/'+ obj.image" :key="obj.image" class="slider-img" :class="{active: i === activeIndex}">
+            <div v-for="(obj,i) in arrImages" :key="obj.image" class="text" :class="{active: i === activeIndex}">
+                <h2>{{ obj.title }}</h2>
+                <p>{{ obj.text }}</p>
             </div>
 		</div>
 		<div class="thumbs">
+            <img v-for="(obj,i) in arrImages" :src="'img/' + obj.image" :key="obj.image" class="thumb-img" :class="{active: i === activeIndex}"@click="setActiveIndex(i)">
 			<div class="controls">
-				<div class="button-up ">&and;</div>
-				<div class="button-down">&or;</div>
+				<div class="button-up" @click="changeSlide(-1)">&and;</div>
+				<div class="button-down" @click="changeSlide(1)">&or;</div>
 			</div>
 		</div>
 		<div class="btns">
-			<button class="btn-start-stop" data-functionality="stop">Stop</button>
-			<button class="btn-invert">Invert</button>
+			<button class="btn-start-stop" @click="controlAutoPlay">{{ isAutoplayActive ? 'Stop' : 'Start' }}</button>
+			<button class="btn-invert" @click="invertAutoPlay">Invert</button>
 		</div>
 	</div> 
-    <!-- for (let i = 0; i < arrImages.length; i++) {
-        const eleImg = document.createElement('img');
-        eleImg.src = `img/${arrImages[i].image}`;
-        eleImg.classList.add('slider-img');
-        eleImg.alt = arrImages[i].title;
-        const eleText = document.createElement('div');
-        eleText.classList.add('text');
-        eleText.innerHTML = `
-          <h2>${arrImages[i].title}</h2>
-          <p>${arrImages[i].text}</p>
-        `; -->
-    
 </body>
 </html>
